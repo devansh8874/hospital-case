@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 
 # Load the saved model (make sure you trained & saved it as 'treatment_model.sav')
-model = pickle.load(open('treatment_model.sav', 'rb'))
+model = pickle.load(open('lr.sav', 'rb'))
 
 st.title("Hospital Treatment Cost Prediction App")
 
@@ -21,3 +21,4 @@ if st.button("Predict Treatment Cost"):
     input_data = np.array([[age, days, complications, tests, medicines]])
     prediction = model.predict(input_data)[0]
     st.success(f"Estimated Treatment Cost: ₹{prediction:,.2f}")
+
